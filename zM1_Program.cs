@@ -157,12 +157,15 @@ class Program {
     static void register_choose_input(List<College_student> college_students,List<Student_school> student_schools,List<Teacher_college> teachers,int registype){
         if (registype ==1){
         college_students.Add(create_new_register_college_student());
+        Console.Clear();
         }
         else if (registype ==2){
         student_schools.Add(create_new_register_student_school());
+        Console.Clear();
         }
         else if (registype ==3){
         teachers.Add(create_new_register_teacher_college());
+        Console.Clear();
         }
     }
 
@@ -296,18 +299,21 @@ class Program {
 
     static void login_check(List<Person> all_person,List<College_student> college_students,List<Student_school> student_schools,Login login_inf,List<Teacher_college> teachers,Statistic statistic){
         if (login_inf.get_email() == "exit"){
+            Console.Clear();
             menu_open(all_person,college_students,student_schools,teachers,statistic);
         }
         else;
         foreach(College_student stu in college_students){
             if (login_inf.get_email()==stu.get_email()&&login_inf.get_password()==stu.get_password()) {
                 Console.WriteLine("Login in success");
+                Console.Clear();
                 open_login_menu(statistic,all_person,college_students,student_schools,teachers);
             }
         }
         foreach(Teacher_college stu in teachers){
             if (login_inf.get_email()==stu.get_email()&&login_inf.get_password()==stu.get_password()) {
                 Console.WriteLine("Login in success");
+                Console.Clear();
                 open_login_menu(statistic,all_person,college_students,student_schools,teachers);
             }
         }
@@ -347,6 +353,7 @@ class Program {
         Console.WriteLine("*************************");
         Console.WriteLine("กดเพื่อไปต่อ");
         Console.ReadLine();
+        Console.Clear();
         menu_open(all_person,college_students,student_schools,teachers,statistic);
     }
     static void college_student_print(Statistic statistic,List<Person> all_person,List<College_student> college_students,List<Student_school> student_schools,List<Teacher_college> teachers){
@@ -358,6 +365,7 @@ class Program {
         Console.WriteLine("****************************");
         Console.WriteLine("กดเพื่อไปต่อ");
         Console.Read();
+        Console.Clear();
         menu_open(all_person,college_students,student_schools,teachers,statistic);
     }
     static void school_student_print(Statistic statistic,List<Person> all_person,List<College_student> college_students,List<Student_school> student_schools,List<Teacher_college> teachers){
@@ -369,6 +377,7 @@ class Program {
         Console.WriteLine("****************************");
         Console.WriteLine("กดเพื่อไปต่อ");
         Console.Read();
+        Console.Clear();
         menu_open(all_person,college_students,student_schools,teachers,statistic);
     }
     static void college_teacher_print(Statistic statistic,List<Person> all_person,List<College_student> college_students,List<Student_school> student_schools,List<Teacher_college> teachers){
@@ -380,6 +389,7 @@ class Program {
         Console.WriteLine("****************************");
         Console.WriteLine("กดเพื่อไปต่อ");
         Console.Read();
+        Console.Clear();
         menu_open(all_person,college_students,student_schools,teachers,statistic);
     }
 
